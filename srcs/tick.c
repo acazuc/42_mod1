@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.h                                              :+:      :+:    :+:   */
+/*   tick.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 09:24:10 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 16:19:32 by acazuc           ###   ########.fr       */
+/*   Created: 2016/02/26 16:14:11 by acazuc            #+#    #+#             */
+/*   Updated: 2016/02/26 16:15:59 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENV_H
-# define ENV_H
+#include "mod1.h"
 
-# include "window.h"
-
-typedef struct	s_env
+void	tick(t_env *env)
 {
-	t_window	*window;
-	int			**map;
-	double		**water;
-	double		**water_tmp;
-	int			mdr;
-}				t_env;
-
-#endif
+	
+}
