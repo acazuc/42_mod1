@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:34:04 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 16:04:56 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 18:22:08 by glavanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,8 @@ int		key_listener(int key, void *data)
 	env = (t_env *)data;
 	if (key == 53)
 		exit(0);
-	if (key == 69)
-		if (env->mdr < MAP_SIZE / 2)
-			env->mdr += 5;
-	if (key == 78)
-		if (env->mdr > 0)
-			env->mdr -= 5;
-	int x = 0;
-	while (x < MAP_SIZE)
-	{
-		int y = 0;
-		while (y < MAP_SIZE)
-		{
-			if (env->map[y][x] < env->mdr)
-				env->water[y][x] = env->mdr - env->map[y][x];
-			else
-				env->water[y][x] = 0;
-			y++;
-		}
-		x++;
-	}
+	for (int i = 0 ; i < 100; i++)
+	flow(env);
 	draw(env);
 	return (0);
 }

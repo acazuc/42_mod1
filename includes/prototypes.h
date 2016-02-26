@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:28:27 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 14:14:44 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 16:55:19 by glavanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ void	map_place_mount_line(t_env *env, char *line);
 void	map_place_mount(t_env *env, int x, int y, int z);
 int		valid_int(char *val);
 void	window_reset(t_env *env);
+void	flow(t_env *env);
+void	water_bck(t_env *env);
 
 #endif

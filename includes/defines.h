@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:57:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 15:36:00 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 18:25:16 by glavanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define DEFINES_H
 
 # define MAP_SIZE 1000
+# define FLOW_SPEED 0.1
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:40:02 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 14:05:23 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 18:20:57 by glavanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void		water_init(t_env *env)
 		x = 0;
 		while (x < MAP_SIZE)
 		{
-			env->water[y][x] = 0;
+			env->water[y][x] = (y < 50 || y > MAP_SIZE - 50 || x < 50 || x > MAP_SIZE - 50) ? MAP_SIZE / 2 : 0;
 			x++;
 		}
 		y++;
