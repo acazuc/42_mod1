@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:34:04 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 14:17:19 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 16:04:56 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int		key_listener(int key, void *data)
 		exit(0);
 	if (key == 69)
 		if (env->mdr < MAP_SIZE / 2)
-			env->mdr++;
+			env->mdr += 5;
 	if (key == 78)
 		if (env->mdr > 0)
-			env->mdr--;
+			env->mdr -= 5;
 	int x = 0;
 	while (x < MAP_SIZE)
 	{

@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 14:11:01 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 16:04:53 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int		main(int ac, char **av)
 	env.window->height = 750;
 	window_init(&env);
 	draw(&env);
-	mlx_key_hook(env.window->mlx_window, key_listener, &env);
+	mlx_hook(env.window->mlx_window, 2, 69, &key_listener, &env);
+	mlx_hook(env.window->mlx_window, 2, 78, &key_listener, &env);
+	//mlx_key_hook(env.window->mlx_window, key_listener, &env);
 	mlx_loop(env.window->mlx);
 	return (0);
 }
