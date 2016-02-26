@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 10:39:03 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 13:17:19 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 17:04:23 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	get_k(int dx, int dy, int z)
 	return ((int)((double)z / 2. * (1 + cos(hyp / (double)z * M_PI))));
 }
 
-void			map_place_mount(t_env *env, int x, int y, int z)
+void		map_place_mount(t_env *env, int x, int y, int z)
 {
 	int		i;
 	int		j;

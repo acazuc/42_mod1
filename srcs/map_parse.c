@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 10:11:48 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 10:47:54 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 17:05:47 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void		place_mount(t_env *env, char *line)
 	map_place_mount_line(env, line);
 }
 
-void	map_parse(t_env *env, char *file)
+void			map_parse(t_env *env, char *file)
 {
 	char	*line;
 	int		fd;

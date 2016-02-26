@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_scree_coord.c                                  :+:      :+:    :+:   */
+/*   scenar_wave.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 09:51:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 17:04:59 by acazuc           ###   ########.fr       */
+/*   Created: 2016/02/26 16:23:51 by acazuc            #+#    #+#             */
+/*   Updated: 2016/02/26 16:27:24 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mod1.h"
 
-int		get_screen_x(int x, int y, int z)
+void	scenar_wave(t_env *env)
 {
-	return ((int)(x / (double)MAP_SIZE * 500. + y / (double)MAP_SIZE * 500.));
-	(void)z;
-}
+	int		i;
 
-int		get_screen_y(int x, int y, int z)
-{
-	return (500 + (int)(x / (double)MAP_SIZE * -250. + y
-				/ (double)MAP_SIZE * 250. - z / (double)MAP_SIZE * 500.));
+	i = 0;
+	while (i < MAP_SIZE)
+	{
+		env->water[0][i] = MAP_SIZE / 2 - env->map[0][i];
+		i++;
+	}
 }

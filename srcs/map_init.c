@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:40:02 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 14:05:23 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 17:04:47 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static void		water_init_bck(t_env *env)
 		}
 		y++;
 	}
-
 }
 
 static void		water_init(t_env *env)
@@ -55,10 +54,9 @@ static void		water_init(t_env *env)
 		}
 		y++;
 	}
-
 }
 
-void	map_init(t_env *env)
+void			map_init(t_env *env)
 {
 	int		x;
 	int		y;
