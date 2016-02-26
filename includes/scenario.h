@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   water_bck.c                                        :+:      :+:    :+:   */
+/*   scenario.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 13:26:00 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 13:27:17 by acazuc           ###   ########.fr       */
+/*   Created: 2016/02/26 18:44:59 by acazuc            #+#    #+#             */
+/*   Updated: 2016/02/26 18:46:15 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mod1.h"
+#ifndef SCENARIO_H
+# define SCENARIO_H
 
-void	water_bck(t_env *env)
+typedef enum	e_scenario
 {
-	int		x;
-	int		y;
+	WAVE,
+	RAIN,
+	UPRISING
+}				t_scenario;
 
-	y = 0;
-	while (y < MAP_SIZE)
-	{
-		x = 0;
-		while (x < MAP_SIZE)
-		{
-			env->water_tmp[y][x] = env->water[y][x];
-			x++;
-		}
-		y++;
-	}
-}
+#endif

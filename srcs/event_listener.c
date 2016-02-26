@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:34:04 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 18:37:06 by glavanan         ###   ########.fr       */
+/*   Updated: 2016/02/26 19:43:54 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 int		key_listener(int key, void *data)
 {
-	t_env	*env;
-
-	env = (t_env *)data;
 	if (key == 53)
 		exit(0);
+	(void)data;
+	return (0);
+}
 
-		scenar_wave(env);
-	for (int i = 0 ; i < 5; i++)
-		flow(env);
+int		loop_listener(void *data)
+{
+	t_env	*env;
+
+	env = (t_env*)data;
+	scenar_rain(env);
+	flow(env);
 	draw(env);
 	return (0);
 }

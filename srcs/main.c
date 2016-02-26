@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 16:33:56 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 19:43:49 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,18 @@ int		main(int ac, char **av)
 		ft_putendl("Usage: mod1 map");
 		exit(0);
 	}
+	srand(time(NULL));
 	env.uprising_count = 0;
 	if (!(env.window = malloc(sizeof(*env.window))))
 		error_quit("Failed to malloc window");
 	map_init(&env);
 	map_parse(&env, av[1]);
 	map_post_load(&env);
-	env.mdr = 0;
-	ft_putendl("initialized map");
 	env.window->width = 1000;
 	env.window->height = 750;
 	window_init(&env);
-	draw(&env);
-	mlx_hook(env.window->mlx_window, 2, 69, &key_listener, &env);
-	mlx_hook(env.window->mlx_window, 2, 78, &key_listener, &env);
-	//mlx_key_hook(env.window->mlx_window, key_listener, &env);
+	mlx_loop_hook(env.window->mlx, loop_listener, &env);
+	mlx_key_hook(env.window->mlx_window, key_listener, &env);
 	mlx_loop(env.window->mlx);
 	return (0);
 }
