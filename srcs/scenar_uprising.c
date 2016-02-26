@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_scree_coord.c                                  :+:      :+:    :+:   */
+/*   scenar_uprising.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 09:51:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 17:04:59 by acazuc           ###   ########.fr       */
+/*   Created: 2016/02/26 16:28:39 by acazuc            #+#    #+#             */
+/*   Updated: 2016/02/26 16:35:18 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mod1.h"
 
-int		get_screen_x(int x, int y, int z)
+void	scenar_uprising(t_env *env)
 {
-	return ((int)(x / (double)MAP_SIZE * 500. + y / (double)MAP_SIZE * 500.));
-	(void)z;
-}
+	int		x;
+	int		y;
 
-int		get_screen_y(int x, int y, int z)
-{
-	return (500 + (int)(x / (double)MAP_SIZE * -250. + y
-				/ (double)MAP_SIZE * 250. - z / (double)MAP_SIZE * 500.));
+	y = 0;
+	while (y < MAP_SIZE)
+	{
+		x = 0;
+		while (x < MAP_SIZE)
+		{
+			if (env->map[y][x] < env->uprising_count)
+				env->water[y][x] = env->uprising_count - env->map[y][x];
+			x++;
+		}
+		y++;
+	}
+	env->uprising_count++;
 }

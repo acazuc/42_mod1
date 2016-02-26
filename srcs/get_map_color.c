@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:44:45 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 13:18:04 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 17:04:31 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		get_high_color(int height, int *r, int *g, int *b)
 	*b = 25. + 231. * height / (MAP_SIZE / 4.);
 }
 
-int		get_map_color(int height)
+int				get_map_color(int height)
 {
 	int		r;
 	int		g;

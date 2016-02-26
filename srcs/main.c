@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 16:04:53 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 16:33:56 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		main(int ac, char **av)
 		ft_putendl("Usage: mod1 map");
 		exit(0);
 	}
+	env.uprising_count = 0;
 	if (!(env.window = malloc(sizeof(*env.window))))
 		error_quit("Failed to malloc window");
 	map_init(&env);

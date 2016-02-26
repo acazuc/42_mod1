@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:57:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 18:25:16 by glavanan         ###   ########.fr       */
+/*   Updated: 2016/02/26 18:35:02 by glavanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 # define MAP_SIZE 1000
 # define FLOW_SPEED 0.1
+# define RAIN_RAND 0.01
 
 #endif
