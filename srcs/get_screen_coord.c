@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:51:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 11:01:14 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 11:17:19 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int		get_screen_x(int x, int y, int z)
 
 int		get_screen_y(int x, int y, int z)
 {
-	return (750 + (int)(x / (double)MAP_SIZE * -250. + y / (double)MAP_SIZE * 250. - z / (double)MAP_SIZE * 500.));
+	return (500 + (int)(x / (double)MAP_SIZE * -250. + y / (double)MAP_SIZE * 250. - z / (double)MAP_SIZE * 500.));
 }

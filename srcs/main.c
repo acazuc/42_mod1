@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 10:11:40 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 11:17:53 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int ac, char **av)
 	map_post_load(&env);
 	ft_putendl("initialized map");
 	env.window->width = 1000;
-	env.window->height = 1000;
+	env.window->height = 750;
 	window_init(&env);
 	draw(&env);
 	mlx_key_hook(env.window->mlx_window, key_listener, &env);

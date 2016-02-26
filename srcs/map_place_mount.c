@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 10:39:03 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 10:59:42 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 11:25:32 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ void			map_place_mount(t_env *env, int x, int y, int z)
 	x = x / 20000. * MAP_SIZE;
 	y = y / 20000. * MAP_SIZE;
 	z = z / 20000. * MAP_SIZE;
-	if (x < 0 || x >= MAP_SIZE || y < 0 || y >= MAP_SIZE || z < 0 || z >= MAP_SIZE)
+	if (x < 0 || x >= MAP_SIZE
+			|| y < 0 || y >= MAP_SIZE
+			|| z < 0 || z >= MAP_SIZE / 2
+			|| z > x || z > MAP_SIZE - x
+			|| z > y || z > MAP_SIZE - y)
 		error_quit("Invalid mount position");
 	i = 0;
 	while (i < MAP_SIZE)
