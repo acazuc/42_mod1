@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:44:45 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 11:44:51 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 13:18:04 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		get_map_color(int height)
 	int		g;
 	int		b;
 
+	if (height == 0)
+		return (0x00FF00);
 	if (height < MAP_SIZE / 4)
 		get_low_color(height, &r, &g, &b);
 	else

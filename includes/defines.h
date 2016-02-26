@@ -6,13 +6,13 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:57:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 11:46:19 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 14:17:47 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINES_H
 # define DEFINES_H
 
-# define MAP_SIZE 2000
+# define MAP_SIZE 500
 
 #endif

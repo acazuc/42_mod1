@@ -6,7 +6,7 @@
 #    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 06:50:12 by acazuc            #+#    #+#              #
-#    Updated: 2016/02/26 10:44:25 by acazuc           ###   ########.fr        #
+#    Updated: 2016/02/26 14:14:54 by acazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS_NAME = main.c \
 			map_place_mount_line.c \
 			map_place_mount.c \
 			valid_int.c \
+			window_reset.c \
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 

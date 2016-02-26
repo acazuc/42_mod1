@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 11:17:53 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 14:11:01 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		main(int ac, char **av)
 	map_init(&env);
 	map_parse(&env, av[1]);
 	map_post_load(&env);
+	env.mdr = 0;
 	ft_putendl("initialized map");
 	env.window->width = 1000;
 	env.window->height = 750;

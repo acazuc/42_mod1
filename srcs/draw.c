@@ -6,26 +6,51 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:39:47 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 11:09:04 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 14:28:13 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mod1.h"
 
+static void		draw_water(t_env *env, int x, int y)
+{
+	int		xd;
+	int		yd;
+	int		i;
+
+	i = 0;
+	while (i < env->water[y][x])
+	{
+		xd = get_screen_x(x, y, env->map[y][x] + i + 1);
+		yd = get_screen_y(x, y, env->map[y][x] + i + 1);
+		pixel_put(env, xd, yd, 255);
+		pixel_put(env, xd-1, yd, 255);
+		i++;
+	}
+}
+
 void	draw(t_env *env)
 {
-	int		z;
+	int		dx;
+	int		dy;
 	int		y;
 	int		x;
 
+	window_reset(env);
 	y = 0;
 	while (y < MAP_SIZE)
 	{
 		x = 0;
 		while (x < MAP_SIZE)
 		{
-			z = get_screen_y(x, y, env->map[y][x]);
-			pixel_put(env, get_screen_x(x, y, env->map[y][x]), z, get_map_color(env->map[y][x]));
+			dx = get_screen_x(x, y, env->map[y][x]);
+			dy = get_screen_y(x, y, env->map[y][x]);
+			pixel_put(env, dx, dy, get_map_color(env->map[y][x]));
+			pixel_put(env, dx+1, dy, get_map_color(env->map[y][x]));
+			pixel_put(env, dx-1, dy, get_map_color(env->map[y][x]));
+			pixel_put(env, dx, dy+1, get_map_color(env->map[y][x]));
+			pixel_put(env, dx, dy-1, get_map_color(env->map[y][x]));
+			draw_water(env, x, y);
 			x++;
 		}
 		y++;

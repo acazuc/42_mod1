@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.h                                              :+:      :+:    :+:   */
+/*   water_bck.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 09:24:10 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 14:09:23 by acazuc           ###   ########.fr       */
+/*   Created: 2016/02/26 13:26:00 by acazuc            #+#    #+#             */
+/*   Updated: 2016/02/26 13:27:17 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENV_H
-# define ENV_H
+#include "mod1.h"
 
-# include "window.h"
-
-typedef struct	s_env
+void	water_bck(t_env *env)
 {
-	t_window	*window;
-	int			**map;
-	double		**water;
-	double		**water_tmp;
-	int			mdr;
-}				t_env;
+	int		x;
+	int		y;
 
-#endif
+	y = 0;
+	while (y < MAP_SIZE)
+	{
+		x = 0;
+		while (x < MAP_SIZE)
+		{
+			env->water_tmp[y][x] = env->water[y][x];
+			x++;
+		}
+		y++;
+	}
+}
