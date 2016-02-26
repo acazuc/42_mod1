@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:39:47 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 19:17:15 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 19:56:09 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static void		draw_water(t_env *env, int x, int y)
 		xd = get_screen_x(x, y, env->map[y][x] + i + 1);
 		yd = get_screen_y(x, y, env->map[y][x] + i + 1);
 		pixel_put(env, xd, yd, 255);
+		pixel_put(env, xd, yd + 1, 255);
 		i++;
 	}
 }
@@ -50,6 +51,8 @@ void			draw(t_env *env)
 			dy = get_screen_y(x, y, env->map[y][x]);
 			pixel_put(env, dx, dy, get_map_color(env->map[y][x]));
 			pixel_put(env, dx, dy + 1, get_map_color(env->map[y][x]));
+			pixel_put(env, dx, dy + 2, get_map_color(env->map[y][x]));
+			pixel_put(env, dx, dy + 3, get_map_color(env->map[y][x]));
 			draw_water(env, x, y);
 			x++;
 		}

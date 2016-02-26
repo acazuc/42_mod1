@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 19:43:49 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/26 19:54:00 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,25 @@ int		main(int ac, char **av)
 {
 	t_env	env;
 
-	if (ac != 2)
+	if (ac == 1 || ac > 3)
 	{
-		ft_putendl("Usage: mod1 map");
+		ft_putendl("Usage: mod1 map [scenario]");
 		exit(0);
+	}
+	env.scenario = RAIN;
+	if (ac == 3)
+	{
+		if (!ft_strcmp(av[2], "rain"))
+			env.scenario = RAIN;
+		else if (!ft_strcmp(av[2], "uprising"))
+			env.scenario = UPRISING;
+		else if (!ft_strcmp(av[3], "wave"))
+			env.scenario = WAVE;
+		else
+		{
+			ft_putendl("Invalid scenario: wave | rain | uprising");
+			exit(-1);
+		}
 	}
 	srand(time(NULL));
 	env.uprising_count = 0;
