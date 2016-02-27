@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:39:47 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 15:41:01 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 20:06:18 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ static void		draw_water(t_env *env, int x, int y)
 	while (i < env->water[y][x])
 	{
 		b = 255;
-		t = (50 - env->water[y][x]) / 50;
+		t = (25. - (double)env->water[y][x]) / 25.;
 		if (t < 0)
 			t = 0;
-		r = t * 96;
+		r = t * 128;
 		g = r;
 		xd = get_screen_x(x, y, env->map[y][x] + i + 1);
 		yd = get_screen_y(x, y, env->map[y][x] + i + 1);
 		pixel_put(env, xd, yd, (r << 16) + (g << 8) + b);
-		pixel_put(env, xd, yd + 1, (r << 16) + (g << 8) + b);
+		//pixel_put(env, xd, yd + 1, (r << 16) + (g << 8) + b);
 		i++;
 	}
 }

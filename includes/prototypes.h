@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:28:27 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 13:11:32 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 19:54:56 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,9 @@ void	scenar_emptying(t_env *env);
 void	scenar_escaping(t_env *env);
 void	water_bck(t_env *env);
 void	water_reset(t_env *env);
+void	flow_wave(t_env *env);
+void	flow_rain(t_env *env);
+void	flow_uprising(t_env *env);
+void	flow_geyser(t_env *env);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/27 12:00:09 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 12:53:38 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 19:58:37 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	scenar_geyser(t_env *env)
 		while (y < MAP_SIZE / 2 + MAP_SIZE / 20)
 		{
 			hyp = sqrt(pow(x - MAP_SIZE / 2, 2) + pow(y - MAP_SIZE / 2, 2));
-			lvl = cos(hyp / (MAP_SIZE / 2)) * MAP_SIZE / 2;
+			lvl = cos(hyp / (sqrt(20 * 20 + 20 * 20))) * MAP_SIZE / 2;
 			if (lvl < 0)
 				lvl = 0;
 			if (env->water[y][x] + env->map[y][x] < lvl)

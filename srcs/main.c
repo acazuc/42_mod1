@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 13:00:36 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 18:16:47 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		main(int ac, char **av)
 	env.window->width = 1000;
 	env.window->height = 750;
 	window_init(&env);
+	scenar_wave(&env);
 	mlx_loop_hook(env.window->mlx, loop_listener, &env);
 	mlx_key_hook(env.window->mlx_window, key_listener, &env);
 	mlx_loop(env.window->mlx);
