@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines.h                                          :+:      :+:    :+:   */
+/*   water_reset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 09:57:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 16:20:44 by acazuc           ###   ########.fr       */
+/*   Created: 2016/02/27 13:03:09 by acazuc            #+#    #+#             */
+/*   Updated: 2016/02/27 13:03:51 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_H
-# define DEFINES_H
+#include "mod1.h"
 
-# define MAP_SIZE 500
-# define RAIN_RAND 0.1
-# define FLOW_FACTOR 1
+void	water_reset(t_env *env)
+{
+	int		x;
+	int		y;
 
-#endif
+	x = 0;
+	while (x < MAP_SIZE)
+	{
+		y = 0;
+		while (y < MAP_SIZE)
+		{
+			env->water[y][x] = 0;
+			y++;
+		}
+		x++;
+	}
+}

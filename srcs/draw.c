@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:39:47 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 11:55:02 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 15:41:01 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void		draw_water(t_env *env, int x, int y)
 	int		i;
 
 	i = 0;
-	if (env->water[y][x] < 1)
+	if (env->water[y][x] < 0.0)
 		return ;
 	if (y < MAP_SIZE - 1 && x > 0 && env->map[y + 1][x - 1]
 			+ env->water[y + 1][x - 1] > env->map[y][x])
@@ -32,7 +32,7 @@ static void		draw_water(t_env *env, int x, int y)
 	while (i < env->water[y][x])
 	{
 		b = 255;
-		t = (25 - env->water[y][x]) / 25;
+		t = (50 - env->water[y][x]) / 50;
 		if (t < 0)
 			t = 0;
 		r = t * 96;

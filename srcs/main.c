@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 11:48:38 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 13:00:36 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		main(int ac, char **av)
 		ft_putendl("Usage: mod1 map [scenario]");
 		exit(0);
 	}
-	env.scenario = RAIN;
+	env.scenario = NOTHING;
 	if (ac == 3)
 	{
 		if (!ft_strcmp(av[2], "rain"))
@@ -30,6 +30,10 @@ int		main(int ac, char **av)
 			env.scenario = UPRISING;
 		else if (!ft_strcmp(av[2], "wave"))
 			env.scenario = WAVE;
+		else if (!ft_strcmp(av[2], "geyser"))
+			env.scenario = GEYSER;
+		else if (!ft_strcmp(av[2], "apocalypse"))
+			env.scenario = APOCALYPSE;
 		else
 		{
 			ft_putendl("Invalid scenario: wave | rain | uprising");

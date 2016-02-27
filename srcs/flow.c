@@ -6,31 +6,34 @@
 /*   By: glavanan <glavanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 16:23:55 by glavanan          #+#    #+#             */
-/*   Updated: 2016/02/27 11:41:06 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 16:20:42 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mod1.h"
 #define TOPWATER(x,y) (env->water_tmp[x][y] + env->map[x][y])
+#define MIN 0.01
 
 static void		check(t_env *env, int x0, int y0, int x1, int y1, int count)
 {
 	double	diff;
 
-	if (env->water_tmp[x0][y0] < 1)
-		diff = env->water_tmp[x0][y0];
+	if (env->water[x0][y0] < MIN)
+		diff = env->water[x0][y0];
 	else
-		diff = (TOPWATER(x0, y0) - TOPWATER(x1, y1)) / FLOW_FACTOR / count;
+		diff = (double)(TOPWATER(x0, y0) - TOPWATER(x1, y1)) / (double)FLOW_FACTOR / (double)count;
+	if (diff > env->water[x0][y0])
+		diff = env->water[x0][y0];
 	env->water[x1][y1] += diff;
 	env->water[x0][y0] -= diff;
 }
-
+/*
 static void		dump(t_env *env, int x0, int y0, int x1, int y1)
 {
 	env->water[x1][y1] += env->water_tmp[x0][y0];
 	env->water[x0][y0] -= env->water_tmp[x0][y0];
 }
-
+*/
 
 void	flow(t_env *env)
 {
@@ -50,7 +53,7 @@ void	flow(t_env *env)
 			if (env->water_tmp[x][y] > 0)
 			{
 				lowest = 0;
-				lower = TOPWATER(x, y);
+				lower = TOPWATER(x, y);/*
 				if (y > 0 && TOPWATER(x, y - 1) < lower && TOPWATER(x, y - 1) + env->water_tmp[x][y] <= env->map[x][y])
 				{
 					lower = TOPWATER(x, y - 1);
@@ -79,28 +82,28 @@ void	flow(t_env *env)
 					dump(env, x, y, x - 1, y);
 				else if (lowest == 4)
 					dump(env, x, y, x + 1, y);
-				else
+				else*/
 				{
 					lower = TOPWATER(x, y);
 					count = 0;
-					if (y > 0 && TOPWATER(x, y - 1) < lower)
+					if (y > 0 && TOPWATER(x, y - 1) < lower - MIN)
 						count++;
-					if (y < MAP_SIZE - 1 && TOPWATER(x, y + 1) < lower)
+					if (y < MAP_SIZE - 1 && TOPWATER(x, y + 1) < lower - MIN)
 						count++;
-					if (x > 0 && TOPWATER(x - 1, y) < lower)
+					if (x > 0 && TOPWATER(x - 1, y) < lower - MIN)
 						count++;
-					if (x < MAP_SIZE - 1 && TOPWATER(x + 1, y) < lower)
+					if (x < MAP_SIZE - 1 && TOPWATER(x + 1, y) < lower - MIN)
 						count++;
 					env->water[x][y] += env->water_tmp[x][y];
 					if (count > 0)
 					{
-						if (y > 0 && TOPWATER(x, y - 1) < lower)
+						if (y > 0 && TOPWATER(x, y - 1) < TOPWATER(x, y) - MIN)
 							check(env, x, y, x, y - 1, count);
-						if (y < MAP_SIZE - 1 && TOPWATER(x, y + 1) < lower)
+						if (y < MAP_SIZE - 1 && TOPWATER(x, y + 1) < TOPWATER(x, y) - MIN)
 							check(env, x, y, x, y + 1, count);
-						if (x > 0 && TOPWATER(x - 1, y) < lower)
+						if (x > 0 && TOPWATER(x - 1, y) < TOPWATER(x, y) - MIN)
 							check(env, x, y, x - 1, y, count);
-						if (x < MAP_SIZE - 1 && TOPWATER(x + 1, y) < lower)
+						if (x < MAP_SIZE - 1 && TOPWATER(x + 1, y) < TOPWATER(x, y) - MIN)
 							check(env, x, y, x + 1, y, count);
 					}
 				}
