@@ -6,7 +6,7 @@
 #    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 06:50:12 by acazuc            #+#    #+#              #
-#    Updated: 2016/02/27 19:55:07 by acazuc           ###   ########.fr        #
+#    Updated: 2016/02/27 20:12:21 by acazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ SRCS_NAME = main.c \
 			flow_rain.c \
 			flow_uprising.c \
 			flow_geyser.c \
+			flow_escaping.c \
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 

@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:57:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 20:01:40 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 20:39:52 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define DEFINES_H
 
 # define MAP_SIZE 500
-# define RAIN_RAND 0.001
+# define RAIN_RAND 0.01
 # define FLOW_FACTOR 2
 
 #endif
