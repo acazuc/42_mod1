@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:39:47 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 19:56:09 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 11:55:02 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,33 @@
 
 static void		draw_water(t_env *env, int x, int y)
 {
+	double	t;
+	int		r;
+	int		g;
+	int		b;
 	int		xd;
 	int		yd;
 	int		i;
 
 	i = 0;
+	if (env->water[y][x] < 1)
+		return ;
 	if (y < MAP_SIZE - 1 && x > 0 && env->map[y + 1][x - 1]
 			+ env->water[y + 1][x - 1] > env->map[y][x])
 		i = env->map[y + 1][x - 1] + env->water[y + 1][x - 1]
 			- env->map[y][x] - 1;
 	while (i < env->water[y][x])
 	{
+		b = 255;
+		t = (25 - env->water[y][x]) / 25;
+		if (t < 0)
+			t = 0;
+		r = t * 96;
+		g = r;
 		xd = get_screen_x(x, y, env->map[y][x] + i + 1);
 		yd = get_screen_y(x, y, env->map[y][x] + i + 1);
-		pixel_put(env, xd, yd, 255);
-		pixel_put(env, xd, yd + 1, 255);
+		pixel_put(env, xd, yd, (r << 16) + (g << 8) + b);
+		pixel_put(env, xd, yd + 1, (r << 16) + (g << 8) + b);
 		i++;
 	}
 }

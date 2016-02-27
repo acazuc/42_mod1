@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 19:54:00 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 11:48:38 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int ac, char **av)
 			env.scenario = RAIN;
 		else if (!ft_strcmp(av[2], "uprising"))
 			env.scenario = UPRISING;
-		else if (!ft_strcmp(av[3], "wave"))
+		else if (!ft_strcmp(av[2], "wave"))
 			env.scenario = WAVE;
 		else
 		{
@@ -37,7 +37,7 @@ int		main(int ac, char **av)
 		}
 	}
 	srand(time(NULL));
-	env.uprising_count = 0;
+	env.scenar_count = 0;
 	if (!(env.window = malloc(sizeof(*env.window))))
 		error_quit("Failed to malloc window");
 	map_init(&env);

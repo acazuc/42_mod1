@@ -6,7 +6,7 @@
 #    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 06:50:12 by acazuc            #+#    #+#              #
-#    Updated: 2016/02/26 18:28:59 by glavanan         ###   ########.fr        #
+#    Updated: 2016/02/27 10:03:16 by acazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRCS_NAME = main.c \
 			scenar_wave.c \
 			scenar_uprising.c \
 			scenar_rain.c \
+			water_bck.c \
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 

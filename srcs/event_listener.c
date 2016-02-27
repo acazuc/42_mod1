@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:34:04 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 19:53:35 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/27 11:50:53 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int		loop_listener(void *data)
 		scenar_uprising(env);
 	else if (env->scenario == WAVE)
 		scenar_wave(env);
-	flow(env);
+	for (int i = 0; i < 5; i++)
+		flow(env);
 	draw(env);
 	return (0);
 }

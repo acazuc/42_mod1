@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scenar_wave.c                                      :+:      :+:    :+:   */
+/*   water_bck.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 16:23:51 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 11:49:41 by acazuc           ###   ########.fr       */
+/*   Created: 2016/02/27 10:00:36 by acazuc            #+#    #+#             */
+/*   Updated: 2016/02/27 11:24:39 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mod1.h"
 
-void	scenar_wave(t_env *env)
+void	water_bck(t_env *env)
 {
-	int		x;
-	int		y;
+	int	x;
+	int	y;
 
-	y = 0;
-	while (y < env->scenar_count / 10)
+	x = 0;
+	while (x < MAP_SIZE)
 	{
-		x = 0;
-		while (x < MAP_SIZE)
+		y = 0;
+		while (y < MAP_SIZE)
 		{
-			env->water[y][x] = MAP_SIZE / 4 - env->map[y][x];
-			x++;
+			env->water_tmp[y][x] = env->water[y][x];
+			env->water[y][x] = 0;
+			y++;
 		}
-		y++;
+		x++;
 	}
-	env->scenar_count++;
 }
