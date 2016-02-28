@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:34:04 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 20:25:40 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 11:46:57 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,19 @@ int		key_listener(int key, void *data)
 	t_env	*env;
 
 	env = (t_env*)data;
+	ft_putnbr(key);
+	ft_putchar('\n');
 	if (key == 53)
 		exit(0);
-	if (key == 14 && env->scenario != EMPTYING)
+	if (key == 14 && env->scenario == RAIN)
 		env->scenario = ESCAPING;
 	else if (key == 9 && env->scenario != ESCAPING)
 		env->scenario = EMPTYING;
+	else if (key == 15)
+	{
+		env->scenar_count = 0;
+		water_reset(env);
+	}
 	return (0);
 }
 
@@ -45,16 +52,6 @@ int		loop_listener(void *data)
 	{
 		scenar_wave(env);
 		flow_wave(env);
-	}
-	else if (env->scenario == GEYSER)
-	{
-		scenar_geyser(env);
-		flow_wave(env);
-	}
-	else if (env->scenario == APOCALYPSE)
-	{
-		flow_uprising(env);
-		scenar_apocalypse(env);
 	}
 	else if (env->scenario == EMPTYING)
 		scenar_emptying(env);

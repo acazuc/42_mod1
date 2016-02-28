@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 10:39:03 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 17:08:26 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 11:36:08 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static double	get_k(int dx, int dy, int z)
 
 	if ((hyp = sqrt(dx * dx + dy * dy)) > z)
 		return (0);
-	return (((double)z / 2. * (1 + cos(hyp / (double)z * M_PI))));
+	return (((double)z / 2. * (1. + cos(hyp / (double)z * M_PI))));
 }
 
 void		map_place_mount(t_env *env, int x, int y, int z)
@@ -32,16 +32,6 @@ void		map_place_mount(t_env *env, int x, int y, int z)
 	z = z / 20000. * MAP_SIZE;
 	if (x < 0 || x >= MAP_SIZE || y < 0 || y >= MAP_SIZE)
 		error_quit("Invalid mount position");
-	if (z > MAP_SIZE / 2)
-		z = MAP_SIZE / 2;
-	if (z > x)
-		z = x;
-	if (z > MAP_SIZE - x)
-		z = MAP_SIZE - x;
-	if (z > y)
-		z = y;
-	if (z > MAP_SIZE - y)
-		z = MAP_SIZE - y;
 	i = 0;
 	while (i < MAP_SIZE)
 	{

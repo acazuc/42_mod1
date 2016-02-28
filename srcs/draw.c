@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:39:47 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 20:08:43 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 11:35:51 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void		draw_water(t_env *env, int x, int y)
 	int		i;
 
 	i = 0;
-	if (env->water[y][x] < 0.0)
+	if (env->water[y][x] < 1)
 		return ;
 	if (y < MAP_SIZE - 1 && x > 0 && env->map[y + 1][x - 1]
 			+ env->water[y + 1][x - 1] > env->map[y][x])
@@ -61,10 +61,20 @@ void			draw(t_env *env)
 		{
 			dx = get_screen_x(x, y, env->map[y][x]);
 			dy = get_screen_y(x, y, env->map[y][x]);
-			pixel_put(env, dx, dy, get_map_color(env->map[y][x]));
-			pixel_put(env, dx, dy + 1, get_map_color(env->map[y][x]));
-			pixel_put(env, dx, dy + 2, get_map_color(env->map[y][x]));
-			pixel_put(env, dx, dy + 3, get_map_color(env->map[y][x]));
+			int togoy;
+			if (x == 1 || y == MAP_SIZE - 2)
+				togoy = get_screen_y(x, y, 0) - dy;
+			else
+				togoy = 1;
+			int i = 0;
+			while (i < togoy)
+			{
+				pixel_put(env, dx, dy + i, get_map_color(env->map[y][x]));
+				pixel_put(env, dx, dy + i + 1, get_map_color(env->map[y][x]));
+				pixel_put(env, dx, dy + i + 2, get_map_color(env->map[y][x]));
+				pixel_put(env, dx, dy + i + 3, get_map_color(env->map[y][x]));
+				i++;
+			}
 			draw_water(env, x, y);
 			x++;
 		}

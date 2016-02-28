@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/27 18:39:54 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 20:25:18 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 11:06:04 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	flow_escaping(t_env *env)
 		y = 0;
 		while (y < MAP_SIZE)
 		{
-			if (env->water[x][y] > 0 && (
-						(x > 0 && env->water_tmp[x - 1][y] > 0 && WTR(x - 1, y) > WTR(x, y))
-					|| (y > 0 && env->water_tmp[x][y - 1] > 0 && WTR(x, y - 1) > WTR(x, y))
-					|| (y < MAP_SIZE - 1 && env->water_tmp[x][y + 1] > 0 && WTR(x, y + 1) > WTR(x, y))
-					|| (x < MAP_SIZE - 1 && env->water_tmp[x + 1][y] > 0 && WTR(x + 1, y) > WTR(x, y))))
+			if (env->water_tmp[x][y] > 0 && (
+						(x > 0 && WTR(x - 1, y) < WTR(x, y))
+					|| (y > 0 && WTR(x, y - 1) < WTR(x, y))
+					|| (y < MAP_SIZE - 1 && WTR(x, y + 1) < WTR(x, y))
+					|| (x < MAP_SIZE - 1 && WTR(x + 1, y) < WTR(x, y))))
 				env->water[x][y]--;
 			y++;
 		}
