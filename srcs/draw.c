@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:39:47 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/28 11:35:51 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 13:09:28 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,9 @@ void			draw(t_env *env)
 	}
 	mlx_put_image_to_window(env->window->mlx, env->window->mlx_window
 			, env->window->img, 0, 0);
+	char	*str;
+	str = env->scenario == RAIN ? "Rain" : (env->scenario == UPRISING ? "Uprising" : (env->scenario == WAVE ? "Wave" : (env->scenario == EMPTYING ? "Emptying" : "Escaping")));
+	mlx_string_put(env->window->mlx, env->window->mlx_window, 11, 11, 0, str);
+	mlx_string_put(env->window->mlx, env->window->mlx_window, 10, 10, 0xFFFFFF, str);
+
 }

@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 16:25:28 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 09:36:01 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 13:09:56 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	window_init(t_env *env)
 		error_quit("Failed to init mlx context");
 	if (!(env->window->mlx_window = mlx_new_window(env->window->mlx
 					, env->window->width
-					, env->window->height, "acazuc's mod1")))
+					, env->window->height, "(acazuc + glavanan)'s mod1")))
 		error_quit("Failed to create window");
 	if (!(env->window->img = mlx_new_image(env->window->mlx
 					, env->window->width, env->window->height)))

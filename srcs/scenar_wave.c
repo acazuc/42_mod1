@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 16:23:51 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/28 10:44:23 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 13:26:55 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	scenar_wave(t_env *env)
 		x = 0;
 		while (x < MAP_SIZE)
 		{
-			env->water[y][x] = env->scenar_count / 5;
+			env->water[y][x] = env->scenar_count / 50;
 			x++;
 		}
 		y++;
 	}
-	if (env->scenar_count < 1000)
+	if (env->scenar_count < 2000)
 		env->scenar_count++;
 }

@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:44:45 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/28 11:51:46 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 13:30:55 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void		get_lowest_color(int height, int *r, int *g, int *b)
 {
 	*r = 255. - 255. * height / (MAP_SIZE / 8.);
-	*g = 255;
+	*g = 255 - 100. * height / (MAP_SIZE / 8.);
 	*b = 0;
 }
 
@@ -23,7 +23,7 @@ static void		get_low_color(int height, int *r, int *g, int *b)
 {
 	height -= MAP_SIZE / 8;
 	*r = 128. * height / (MAP_SIZE / 8.);
-	*g = 255. - 192. * height / (MAP_SIZE / 8.);
+	*g = 155. - 100. * height / (MAP_SIZE / 8.);
 	*b = 25. * height / (MAP_SIZE / 8.);
 }
 
@@ -41,8 +41,6 @@ int				get_map_color(int height)
 	int		g;
 	int		b;
 
-	if (height == 0)
-		return (0xFFFF00);
 	if (height < MAP_SIZE / 8)
 		get_lowest_color(height, &r, &g, &b);
 	else if (height < MAP_SIZE / 4)

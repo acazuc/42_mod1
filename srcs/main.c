@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/27 18:16:47 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 13:19:47 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,21 @@ int		main(int ac, char **av)
 {
 	t_env	env;
 
-	if (ac == 1 || ac > 3)
+	if (ac != 3)
 	{
 		ft_putendl("Usage: mod1 map [scenario]");
 		exit(0);
 	}
-	env.scenario = NOTHING;
-	if (ac == 3)
+	if (!ft_strcmp(av[2], "rain"))
+		env.scenario = RAIN;
+	else if (!ft_strcmp(av[2], "uprising"))
+		env.scenario = UPRISING;
+	else if (!ft_strcmp(av[2], "wave"))
+		env.scenario = WAVE;
+	else
 	{
-		if (!ft_strcmp(av[2], "rain"))
-			env.scenario = RAIN;
-		else if (!ft_strcmp(av[2], "uprising"))
-			env.scenario = UPRISING;
-		else if (!ft_strcmp(av[2], "wave"))
-			env.scenario = WAVE;
-		else if (!ft_strcmp(av[2], "geyser"))
-			env.scenario = GEYSER;
-		else if (!ft_strcmp(av[2], "apocalypse"))
-			env.scenario = APOCALYPSE;
-		else
-		{
-			ft_putendl("Invalid scenario: wave | rain | uprising");
-			exit(-1);
-		}
+		ft_putendl("Invalid scenario: wave | rain | uprising");
+		exit(-1);
 	}
 	srand(time(NULL));
 	env.scenar_count = 0;

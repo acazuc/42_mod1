@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:34:04 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/28 11:46:57 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/02/28 12:54:09 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int		key_listener(int key, void *data)
 	t_env	*env;
 
 	env = (t_env*)data;
-	ft_putnbr(key);
-	ft_putchar('\n');
 	if (key == 53)
 		exit(0);
 	if (key == 14 && env->scenario == RAIN)
