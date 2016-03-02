@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 10:11:48 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 17:05:47 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/03/02 13:31:10 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ void			map_parse(t_env *env, char *file)
 	while ((rd = get_next_line(fd, &line)) == 1)
 	{
 		place_mount(env, line);
+		free(line);
 	}
 	if (rd == -1)
 		error_quit("Error while get_next_line");
+	close(fd);
 }

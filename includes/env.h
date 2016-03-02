@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:24:10 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/28 11:31:16 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/03/02 13:01:30 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct	s_env
 	double		**water;
 	double		**water_tmp;
 	int			scenar_count;
+	int			flow_pause;
+	int			pause;
 }				t_env;
 
 #endif

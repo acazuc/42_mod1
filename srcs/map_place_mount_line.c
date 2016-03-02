@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 10:21:34 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/26 17:05:58 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/03/02 13:29:38 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,17 @@ static void		place_mount(t_env *env, char *mount)
 		error_quit("Failed to sub mount");
 	if (!(splitted = ft_strsplit(str, ',')))
 		error_quit("Failed to split mount");
+	free(str);
 	if (!splitted[0] || !valid_int(splitted[0])
 			|| !splitted[1] || !valid_int(splitted[1])
 			|| !splitted[2] || !valid_int(splitted[2]))
 		error_quit("Invalid mount position");
 	map_place_mount(env, ft_atoi(splitted[0]), ft_atoi(splitted[1])
 			, ft_atoi(splitted[2]));
+	free(splitted[0]);
+	free(splitted[1]);
+	free(splitted[2]);
+	free(splitted);
 }
 
 void			map_place_mount_line(t_env *env, char *line)
@@ -40,6 +45,8 @@ void			map_place_mount_line(t_env *env, char *line)
 	while (mounts[i])
 	{
 		place_mount(env, mounts[i]);
+		free(mounts[i]);
 		i++;
 	}
+	free(mounts);
 }

@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:26:14 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/28 13:19:47 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/03/02 13:01:22 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int		main(int ac, char **av)
 		ft_putendl("Usage: mod1 map [scenario]");
 		exit(0);
 	}
+	env.pause = 0;
+	env.flow_pause = 0;
 	if (!ft_strcmp(av[2], "rain"))
 		env.scenario = RAIN;
 	else if (!ft_strcmp(av[2], "uprising"))

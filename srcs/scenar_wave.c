@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 16:23:51 by acazuc            #+#    #+#             */
-/*   Updated: 2016/02/28 13:26:55 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/03/02 13:09:57 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	scenar_wave(t_env *env)
 		}
 		y++;
 	}
-	if (env->scenar_count < 2000)
+	if (env->scenar_count < MAP_SIZE / 4. * 50.)
 		env->scenar_count++;
 }
