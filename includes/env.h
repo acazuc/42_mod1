@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 09:24:10 by acazuc            #+#    #+#             */
-/*   Updated: 2016/03/02 13:01:30 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/03/02 13:40:33 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct	s_env
 {
 	t_scenario	scenario;
 	t_window	*window;
-	double			**map;
+	double		**map;
 	double		**water;
 	double		**water_tmp;
 	int			scenar_count;
